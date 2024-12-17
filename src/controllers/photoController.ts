@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
 import { fetchPhotoUrls } from '../services/photosService';
 
-export const getPhotoUrls = async (req: Request, res: Response, next: NextFunction) => {
+export const getPhotoUrls = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const count = parseInt(req.params.count);
 
     if (isNaN(count) || count <= 0) {
-        return res.status(400).json({ error: 'Invalid count parameter' });
+        res.status(400).json({ error: 'Invalid count parameter' });
     }
 
     try {

@@ -1,10 +1,10 @@
-import express from 'express';
+import express, {Application} from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import photoRoutes from './routes/photoRoutes';
 import orderRoutes from './routes/orderRoutes';
 
-const app = express();
+const app: Application = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
