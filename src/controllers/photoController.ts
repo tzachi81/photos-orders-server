@@ -1,17 +1,19 @@
 import { Request, Response, NextFunction } from 'express';
-import { fetchPhotoUrls } from '../services/photosService';
+import { fetchPhotoUrlsService } from '../services/photosServices';
 
-export const getPhotoUrls = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-    const count = parseInt(req.params.count);
+export const getPhotoUrls = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
 
-    if (isNaN(count) || count <= 0) {
-        res.status(400).json({ error: 'Invalid count parameter' });
-    }
+    // const count = Number(request.params.count) || 10;
+    // const theme = request.params.category as string || 'all';
 
+    // console.log('photos requested', count, theme);
+
+    //TODO: add count limitation support (3 and above...)
     try {
-        const photoUrls = await fetchPhotoUrls(count);
-        res.json(photoUrls);
+        const photoUrls = await fetchPhotoUrlsService(Number(request.params.count) || 10, request.params.category as string || 'all');
+        response.set('Cache-Control', 'no-store');
+        response.json(photoUrls);
     } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch photos' });
+        response.status(500).json({ error: 'Failed to fetch photos' });
     }
 };
