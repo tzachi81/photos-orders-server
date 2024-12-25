@@ -23,15 +23,4 @@ export const createOrdersDbQuery = async (): Promise<{ message?: string; errorCo
 
     return { errorCode, errorMessage };
   }
-  // return await pool.query(
-  //   `CREATE TABLE IF NOT EXISTS orders (
-  //   id SERIAL PRIMARY KEY,
-  //   email VARCHAR(255) NOT NULL,
-  //   full_name VARCHAR(255) NOT NULL,
-  //   address TEXT NOT NULL,
-  //   image_urls TEXT[],
-  //   frame_color VARCHAR(50),
-  //   user_name VARCHAR(255)
-  // )`
-  // )
 };

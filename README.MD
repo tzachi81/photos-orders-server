@@ -25,12 +25,12 @@
 *POST* request: `http://localhost:3000/api/orders`<br>
 - With body (this is just an example):
   >`{
-	"email": "rona@titan.com",
-  "fullName": "Rona Lankry",
+	"email": "user@mydbmail.com",
+  "fullName": "Jon Doe",
   "fullAddress": "unknown yet",
   "imageUrls": ["https://pixabay.com/get/gde558fa8959327fb75233984c493d479cbfcda7273b190e56371a4415ce9d61ae545d742eee48fc00561bef7a629e93fe3e46fafd7928123737bfde44ad73a0f_1280.jpg", "https://pixabay.com/get/g57c7a2015d3c4faca2cf780887a9b345a21ed221ba934a8badf7b6ded53eea046a4a831d1b327c2357f211d6a101414ddb99ed5e78c54c0608f5826c0fbddda1_1280.jpg"],
   "frameColor": "blue",
-  "userName": "ronal"
+  "userName": "jon_doe"
 }`
 
 ## Database

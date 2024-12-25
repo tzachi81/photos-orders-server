@@ -5,8 +5,9 @@ export const createOrder = async (orderDetails: IOrder): Promise<IOrder[]> => {
 
   const { email, fullName, fullAddress, imageUrls, frameColor, userName } = orderDetails;
 
-  const addOrderQuery = `INSERT INTO orders (email, full_name, address, image_urls, frame_color, user_name)
-   VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
+  const addOrderQuery = `
+  INSERT INTO orders (email, full_name, address, image_urls, frame_color, user_name)
+  VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
 
   return await pool.query(addOrderQuery, [email, fullName, fullAddress, imageUrls, frameColor, userName])
     .then((result) => {

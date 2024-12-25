@@ -6,3 +6,6 @@ package-lock.json
 # misc
 .DS_Store
 .vercel
+
+#build
+/dist
