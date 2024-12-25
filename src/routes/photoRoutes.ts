@@ -3,6 +3,6 @@ import { getPhotoUrls } from '../controllers/photoController';
 
 const router = Router();
 
-router.get('/:count', getPhotoUrls);
+router.get('/:count/:category?', getPhotoUrls);
 
 export default router;
