@@ -1,3 +1,4 @@
+
 {
   "compilerOptions": {
     "target": "ES6",
@@ -6,7 +7,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist"
+    "outDir": "./public"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
